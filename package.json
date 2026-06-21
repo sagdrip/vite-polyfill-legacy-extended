@@ -1,0 +1,9 @@
+{
+  "name": "vite-polyfill-legacy-extended",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "peerDependencies": {
+    "vite": "^4.0.0"
+  }
+}
