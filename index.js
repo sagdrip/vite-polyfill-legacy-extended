@@ -5,7 +5,7 @@ export function legacyPolyfill() {
   return {
     name: 'vite-polyfill-legacy-extended',
     transform(code, id) {
-      if (id.startsWith("\0")) return null;
+      if (id.startsWith("\0") || id.includes("node_modules")) return null;
 
       const mirror = path.join(import.meta.dirname, path.relative(process.cwd(), id));
       if (!fs.existsSync(mirror)) return " ";
