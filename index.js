@@ -6,6 +6,8 @@ export function legacyPolyfill() {
     name: 'vite-polyfill-legacy-extended',
     enforce: 'pre',
     transform(code, id) {
+      if (!id.includes("apps/game")) return null;
+      
       if (id.startsWith("\0") || id.includes("node_modules")) return null;
 
       if (!(id.endsWith(".svelte") || id.endsWith(".html") || id.endsWith(".js") || id.endsWith(".ts"))) return null;
