@@ -4,6 +4,7 @@ import path from "path";
 export function legacyPolyfill() {
   return {
     name: 'vite-polyfill-legacy-extended',
+    enforce: 'pre',
     transform(code, id) {
       if (id.startsWith("\0") || id.includes("node_modules")) return null;
 
